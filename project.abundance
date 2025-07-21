@@ -7,10 +7,51 @@
     "ioValues": [],
     "description": "Molecules provide an organizational structure to contain atoms. Double click on a molecule to enter it. Use the up arrow in the upper right hand corner of the screen to go up one level.",
     "topLevel": true,
-    "allAtoms": [],
-    "allConnectors": [],
+    "allAtoms": [
+        {
+            "atomType": "Output",
+            "name": "Output",
+            "x": 0.98,
+            "y": 0.5,
+            "uniqueID": "ff60115e-cfa4-45ab-9977-4c69c5d51229",
+            "ioValues": [
+                {
+                    "name": "number or geometry",
+                    "ioValue": "e5f5c300-5860-4107-a051-6c3036b23e99"
+                }
+            ],
+            "description": "Connect geometry here to make it available in the next level up. "
+        },
+        {
+            "atomType": "Rectangle",
+            "name": "Rectangle",
+            "x": 0.30859375,
+            "y": 0.38857142857142857,
+            "uniqueID": "e5f5c300-5860-4107-a051-6c3036b23e99",
+            "ioValues": [
+                {
+                    "name": "x length",
+                    "ioValue": 10
+                },
+                {
+                    "name": "y length",
+                    "ioValue": 10
+                }
+            ],
+            "description": "Creates a new rectangle."
+        }
+    ],
+    "allConnectors": [
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "number or geometry",
+            "ap2Primary": false,
+            "ap1ID": "e5f5c300-5860-4107-a051-6c3036b23e99",
+            "ap2ID": "ff60115e-cfa4-45ab-9977-4c69c5d51229"
+        }
+    ],
     "unitsKey": "MM",
     "fileTypeVersion": 1,
-    "compiledBom": {},
+    "compiledBom": [],
     "filetypeVersion": 1
 }
