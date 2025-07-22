@@ -43,8 +43,8 @@
         {
             "atomType": "Circle",
             "name": "Circle",
-            "x": 0.38476562500000006,
-            "y": 0.37428571428571433,
+            "x": 0.21549479166666666,
+            "y": 0.6542857142857142,
             "uniqueID": "9d301ca4-9ec6-47ab-bfe1-c7eeb41ca7dc",
             "ioValues": [
                 {
@@ -57,17 +57,17 @@
         {
             "atomType": "RegularPolygon",
             "name": "RegularPolygon",
-            "x": 0.470703125,
-            "y": 0.6342857142857142,
+            "x": 0.212890625,
+            "y": 0.8742857142857143,
             "uniqueID": "12711c90-0520-43d5-991f-7c9c307f8e1d",
             "ioValues": [
                 {
                     "name": "number of sides",
-                    "ioValue": 6
+                    "ioValue": 3
                 },
                 {
                     "name": "diameter",
-                    "ioValue": 10
+                    "ioValue": 15
                 }
             ],
             "description": "Creates a new regular polygon. Corners are on the diameter."
@@ -114,13 +114,13 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.2643229166666667,
-            "y": 0.8171428571428572,
+            "x": 0.36067708333333337,
+            "y": 0.4971428571428571,
             "uniqueID": "b9254cfb-5d11-4f6b-b631-20e1b35f461c",
             "ioValues": [
                 {
                     "name": "inputShape",
-                    "ioValue": 10
+                    "ioValue": "afa49fd0-7c71-451e-b29b-808338c75c82"
                 },
                 {
                     "name": "dist",
@@ -138,8 +138,8 @@
         {
             "atomType": "Extrude",
             "name": "Extrude",
-            "x": 0.23372395833333331,
-            "y": 0.4828571428571429,
+            "x": 0.2975260416666667,
+            "y": 0.2885714285714286,
             "uniqueID": "afa49fd0-7c71-451e-b29b-808338c75c82",
             "ioValues": [
                 {
@@ -152,6 +152,164 @@
                 }
             ],
             "description": "Extrudes a 2D shape. Input can be negitive. "
+        },
+        {
+            "atomType": "Move",
+            "name": "Move",
+            "x": 0.294921875,
+            "y": 0.6485714285714286,
+            "uniqueID": "762927d9-b92f-44af-aff2-fe429f07479f",
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "9d301ca4-9ec6-47ab-bfe1-c7eeb41ca7dc"
+                },
+                {
+                    "name": "xDist",
+                    "ioValue": -7
+                },
+                {
+                    "name": "yDist",
+                    "ioValue": 3
+                },
+                {
+                    "name": "zDist",
+                    "ioValue": 20
+                }
+            ],
+            "description": "Moves a shape laterally in X, Y, Z."
+        },
+        {
+            "atomType": "Rotate",
+            "name": "Rotate",
+            "x": 0.39322916666666663,
+            "y": 0.8742857142857143,
+            "uniqueID": "2a28f352-a53d-4c13-acb3-04443a71c4d4",
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "12711c90-0520-43d5-991f-7c9c307f8e1d"
+                },
+                {
+                    "name": "x-axis degrees",
+                    "ioValue": 0
+                },
+                {
+                    "name": "y-axis degrees",
+                    "ioValue": 0
+                },
+                {
+                    "name": "z-axis degrees",
+                    "ioValue": 15
+                }
+            ],
+            "description": "Rotates the input geometry around the X, Y, or Z axis. Inputs are degrees."
+        },
+        {
+            "atomType": "Loft",
+            "name": "Loft",
+            "x": 0.4609375,
+            "y": 0.7057142857142857,
+            "uniqueID": "388a5a6d-7a2d-473d-954d-1cba49df0fe2",
+            "ioValues": [
+                {
+                    "name": "Shape 1",
+                    "ioValue": "762927d9-b92f-44af-aff2-fe429f07479f"
+                },
+                {
+                    "name": "Shape 2",
+                    "ioValue": "2a28f352-a53d-4c13-acb3-04443a71c4d4"
+                },
+                {
+                    "name": "Shape 3",
+                    "ioValue": ""
+                },
+                {
+                    "name": "Shape 1",
+                    "ioValue": "762927d9-b92f-44af-aff2-fe429f07479f"
+                },
+                {
+                    "name": "Shape 2",
+                    "ioValue": "2a28f352-a53d-4c13-acb3-04443a71c4d4"
+                },
+                {
+                    "name": "Shape 3",
+                    "ioValue": ""
+                }
+            ],
+            "description": "Joins two or more shapes into a single solid by filling in the space between them.",
+            "closedSelection": 0
+        },
+        {
+            "atomType": "Add-BOM-Tag",
+            "name": "Add BOM Tag",
+            "x": 0.365234375,
+            "y": 0.10857142857142857,
+            "uniqueID": "b5e017d9-2f30-469b-acc9-f77effaf33dc",
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "afa49fd0-7c71-451e-b29b-808338c75c82"
+                }
+            ],
+            "description": "Adds a Bill Of Materials tag which appears in molecules containing this atom and in the GitHub project bill of materials.",
+            "BOMitem": {
+                "BOMitemName": "Aluminium",
+                "numberNeeded": 1,
+                "costUSD": 0,
+                "source": "www.example.com"
+            }
+        },
+        {
+            "atomType": "Tag",
+            "name": "t1",
+            "x": 0.40559895833333337,
+            "y": 0.3028571428571429,
+            "uniqueID": "2bb9d156-76e0-4af7-adda-e4e8151b8309",
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "afa49fd0-7c71-451e-b29b-808338c75c82"
+                }
+            ],
+            "description": "Tags geometry so that it can be extracted later.",
+            "tags": [
+                "t1"
+            ]
+        },
+        {
+            "atomType": "Assembly",
+            "name": "Assembly",
+            "x": 0.5358072916666666,
+            "y": 0.21714285714285714,
+            "uniqueID": "a1cab2cd-b19b-45cc-addb-d8d0b878152e",
+            "ioValues": [
+                {
+                    "name": "Shape 1",
+                    "ioValue": "2bb9d156-76e0-4af7-adda-e4e8151b8309"
+                },
+                {
+                    "name": "Shape 2",
+                    "ioValue": "388a5a6d-7a2d-473d-954d-1cba49df0fe2"
+                }
+            ],
+            "description": "Pick between assembly and fusion to join input geometries. Assembly takes multiple shapes together into one, shapes higher in the inputs list will cut into shapes lower on the input list where they overlap. Fusion takes all shapes or sketches and fuses them permanently into a single shape"
+        },
+        {
+            "atomType": "ExtractTag",
+            "name": "Extract Tag",
+            "x": 0.6399739583333334,
+            "y": 0.3142857142857143,
+            "uniqueID": "422fcb42-aa56-4522-bcb1-8913faaf7a34",
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "a1cab2cd-b19b-45cc-addb-d8d0b878152e"
+                }
+            ],
+            "description": "Extracts geometry containing the specified tag.",
+            "tag": "t1",
+            "tagIndex": 0
         }
     ],
     "allConnectors": [
@@ -161,6 +319,20 @@
             "ap2Primary": true,
             "ap1ID": "e5f5c300-5860-4107-a051-6c3036b23e99",
             "ap2ID": "afa49fd0-7c71-451e-b29b-808338c75c82"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": "9d301ca4-9ec6-47ab-bfe1-c7eeb41ca7dc",
+            "ap2ID": "762927d9-b92f-44af-aff2-fe429f07479f"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": "12711c90-0520-43d5-991f-7c9c307f8e1d",
+            "ap2ID": "2a28f352-a53d-4c13-acb3-04443a71c4d4"
         },
         {
             "ap1Name": "number or geometry",
@@ -196,6 +368,62 @@
             "ap2Primary": false,
             "ap1ID": "397fd25b-7236-48cb-8434-29d4330cf57f",
             "ap2ID": "e5f5c300-5860-4107-a051-6c3036b23e99"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "inputShape",
+            "ap2Primary": false,
+            "ap1ID": "afa49fd0-7c71-451e-b29b-808338c75c82",
+            "ap2ID": "b9254cfb-5d11-4f6b-b631-20e1b35f461c"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": "afa49fd0-7c71-451e-b29b-808338c75c82",
+            "ap2ID": "b5e017d9-2f30-469b-acc9-f77effaf33dc"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": "afa49fd0-7c71-451e-b29b-808338c75c82",
+            "ap2ID": "2bb9d156-76e0-4af7-adda-e4e8151b8309"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 1",
+            "ap2Primary": false,
+            "ap1ID": "762927d9-b92f-44af-aff2-fe429f07479f",
+            "ap2ID": "388a5a6d-7a2d-473d-954d-1cba49df0fe2"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 2",
+            "ap2Primary": false,
+            "ap1ID": "2a28f352-a53d-4c13-acb3-04443a71c4d4",
+            "ap2ID": "388a5a6d-7a2d-473d-954d-1cba49df0fe2"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 2",
+            "ap2Primary": false,
+            "ap1ID": "388a5a6d-7a2d-473d-954d-1cba49df0fe2",
+            "ap2ID": "a1cab2cd-b19b-45cc-addb-d8d0b878152e"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 1",
+            "ap2Primary": false,
+            "ap1ID": "2bb9d156-76e0-4af7-adda-e4e8151b8309",
+            "ap2ID": "a1cab2cd-b19b-45cc-addb-d8d0b878152e"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": "a1cab2cd-b19b-45cc-addb-d8d0b878152e",
+            "ap2ID": "422fcb42-aa56-4522-bcb1-8913faaf7a34"
         }
     ],
     "unitsKey": "MM",
