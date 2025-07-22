@@ -4,7 +4,12 @@
     "x": 0,
     "y": 0,
     "uniqueID": "73bdbf5b-a7c4-4e2d-86cd-349148421208",
-    "ioValues": [],
+    "ioValues": [
+        {
+            "name": "width",
+            "ioValue": 10
+        }
+    ],
     "description": "Molecules provide an organizational structure to contain atoms. Double click on a molecule to enter it. Use the up arrow in the upper right hand corner of the screen to go up one level.",
     "topLevel": true,
     "allAtoms": [
@@ -20,8 +25,8 @@
         {
             "atomType": "Rectangle",
             "name": "Rectangle",
-            "x": 0.30859375,
-            "y": 0.38857142857142857,
+            "x": 0.197265625,
+            "y": 0.21142857142857144,
             "uniqueID": "e5f5c300-5860-4107-a051-6c3036b23e99",
             "ioValues": [
                 {
@@ -30,13 +35,113 @@
                 },
                 {
                     "name": "y length",
-                    "ioValue": 10
+                    "ioValue": 100
                 }
             ],
             "description": "Creates a new rectangle."
+        },
+        {
+            "atomType": "Circle",
+            "name": "Circle",
+            "x": 0.38476562500000006,
+            "y": 0.37428571428571433,
+            "uniqueID": "9d301ca4-9ec6-47ab-bfe1-c7eeb41ca7dc",
+            "ioValues": [
+                {
+                    "name": "diameter",
+                    "ioValue": 10
+                }
+            ],
+            "description": "Creates a new circle."
+        },
+        {
+            "atomType": "RegularPolygon",
+            "name": "RegularPolygon",
+            "x": 0.470703125,
+            "y": 0.6342857142857142,
+            "uniqueID": "12711c90-0520-43d5-991f-7c9c307f8e1d",
+            "ioValues": [
+                {
+                    "name": "number of sides",
+                    "ioValue": 6
+                },
+                {
+                    "name": "diameter",
+                    "ioValue": 10
+                }
+            ],
+            "description": "Creates a new regular polygon. Corners are on the diameter."
+        },
+        {
+            "atomType": "Input",
+            "name": "width",
+            "x": 0.025384615384615384,
+            "y": 0.24,
+            "uniqueID": "1a3f1461-19c0-47a0-a2ba-cd470f279790",
+            "ioValues": [],
+            "description": "Adds an input to the parent molecule. If the parent molecule is the top level of the project then the input will be available when the project is shared or imported into another project. Name is editable",
+            "type": "number"
+        },
+        {
+            "atomType": "Constant",
+            "name": "Aspect Ratio",
+            "x": 0.04361979166666667,
+            "y": 0.7028571428571428,
+            "uniqueID": "9ffec5cf-6456-406f-b354-25cf6a6c09c5",
+            "ioValues": [],
+            "description": "Defines a mathematical constant.",
+            "value": 10
+        },
+        {
+            "atomType": "Equation",
+            "name": "w * r",
+            "x": 0.09570312500000001,
+            "y": 0.48857142857142855,
+            "uniqueID": "397fd25b-7236-48cb-8434-29d4330cf57f",
+            "ioValues": [
+                {
+                    "name": "w",
+                    "ioValue": 10
+                },
+                {
+                    "name": "r",
+                    "ioValue": 10
+                }
+            ],
+            "description": "Defines a mathematical equation. Edit the output field to add or remove inputs.",
+            "currentEquation": "w * r"
         }
     ],
-    "allConnectors": [],
+    "allConnectors": [
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "x length",
+            "ap2Primary": false,
+            "ap1ID": "1a3f1461-19c0-47a0-a2ba-cd470f279790",
+            "ap2ID": "e5f5c300-5860-4107-a051-6c3036b23e99"
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "w",
+            "ap2Primary": false,
+            "ap1ID": "1a3f1461-19c0-47a0-a2ba-cd470f279790",
+            "ap2ID": "397fd25b-7236-48cb-8434-29d4330cf57f"
+        },
+        {
+            "ap1Name": "number",
+            "ap2Name": "r",
+            "ap2Primary": false,
+            "ap1ID": "9ffec5cf-6456-406f-b354-25cf6a6c09c5",
+            "ap2ID": "397fd25b-7236-48cb-8434-29d4330cf57f"
+        },
+        {
+            "ap1Name": "result",
+            "ap2Name": "y length",
+            "ap2Primary": false,
+            "ap1ID": "397fd25b-7236-48cb-8434-29d4330cf57f",
+            "ap2ID": "e5f5c300-5860-4107-a051-6c3036b23e99"
+        }
+    ],
     "unitsKey": "MM",
     "fileTypeVersion": 1,
     "compiledBom": [],
