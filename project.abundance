@@ -110,9 +110,58 @@
             ],
             "description": "Defines a mathematical equation. Edit the output field to add or remove inputs.",
             "currentEquation": "w * r"
+        },
+        {
+            "atomType": "Code",
+            "name": "Code",
+            "x": 0.2643229166666667,
+            "y": 0.8171428571428572,
+            "uniqueID": "b9254cfb-5d11-4f6b-b631-20e1b35f461c",
+            "ioValues": [
+                {
+                    "name": "inputShape",
+                    "ioValue": 10
+                },
+                {
+                    "name": "dist",
+                    "ioValue": 10
+                },
+                {
+                    "name": "height",
+                    "ioValue": 10
+                }
+            ],
+            "description": "Defines a Replicad code block.",
+            "codeVersion": 1,
+            "code": "        //Inputs:[inputShape, dist, height]\n        let shape = library[inputShape]\n\n        const rotated = await Rotate(shape, 5, 10, dist)\n        const moved = await Move(shape, 0, 9, height)\n        const scaled = await Scale(shape, 0.7)\n        const assembled = await Assembly([shape, moved])\n        const inter = await Intersect(shape, moved)\n        const cut = await CutAssembly(shape, [scaled, moved])\n        const modifiedAssembly = await AssemblyMap(assembled, async (s) => {return await Rotate(s, 0, 10, 90)})\n        console.log(await AssemblyAsIterable(assembled))\n        console.log(GetBounds(shape))\n        const filleted = await Fillet(shape, 0.3)\n        const chamfered = await Chamfer(shape, 1)\n\n        return Assembly([modifiedAssembly, inter, cut, filleted, chamfered])\n"
+        },
+        {
+            "atomType": "Extrude",
+            "name": "Extrude",
+            "x": 0.23372395833333331,
+            "y": 0.4828571428571429,
+            "uniqueID": "afa49fd0-7c71-451e-b29b-808338c75c82",
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "e5f5c300-5860-4107-a051-6c3036b23e99"
+                },
+                {
+                    "name": "height",
+                    "ioValue": 10
+                }
+            ],
+            "description": "Extrudes a 2D shape. Input can be negitive. "
         }
     ],
     "allConnectors": [
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": "e5f5c300-5860-4107-a051-6c3036b23e99",
+            "ap2ID": "afa49fd0-7c71-451e-b29b-808338c75c82"
+        },
         {
             "ap1Name": "number or geometry",
             "ap2Name": "x length",
@@ -126,6 +175,13 @@
             "ap2Primary": false,
             "ap1ID": "1a3f1461-19c0-47a0-a2ba-cd470f279790",
             "ap2ID": "397fd25b-7236-48cb-8434-29d4330cf57f"
+        },
+        {
+            "ap1Name": "number or geometry",
+            "ap2Name": "height",
+            "ap2Primary": false,
+            "ap1ID": "1a3f1461-19c0-47a0-a2ba-cd470f279790",
+            "ap2ID": "afa49fd0-7c71-451e-b29b-808338c75c82"
         },
         {
             "ap1Name": "number",
