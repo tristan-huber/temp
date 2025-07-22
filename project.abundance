@@ -298,8 +298,8 @@
         {
             "atomType": "ExtractTag",
             "name": "Extract Tag",
-            "x": 0.6399739583333334,
-            "y": 0.3142857142857143,
+            "x": 0.642578125,
+            "y": 0.18857142857142858,
             "uniqueID": "422fcb42-aa56-4522-bcb1-8913faaf7a34",
             "ioValues": [
                 {
@@ -310,6 +310,61 @@
             "description": "Extracts geometry containing the specified tag.",
             "tag": "t1",
             "tagIndex": 0
+        },
+        {
+            "atomType": "Fusion",
+            "name": "Fusion",
+            "x": 0.5748697916666666,
+            "y": 0.8942857142857142,
+            "uniqueID": "4568bd18-938d-4ad7-86ba-6f5142c04ca7",
+            "ioValues": [
+                {
+                    "name": "Shape 1",
+                    "ioValue": "388a5a6d-7a2d-473d-954d-1cba49df0fe2"
+                },
+                {
+                    "name": "Shape 2",
+                    "ioValue": "afa49fd0-7c71-451e-b29b-808338c75c82"
+                }
+            ],
+            "description": "Pick between assembly and fusion to join input geometries. Assembly takes multiple shapes together into one, shapes higher in the inputs list will cut into shapes lower on the input list where they overlap. Fusion takes all shapes or sketches and fuses them permanently into a single shape",
+            "unionType": "Fusion"
+        },
+        {
+            "atomType": "Intersection",
+            "name": "Intersection",
+            "x": 0.693359375,
+            "y": 0.8514285714285714,
+            "uniqueID": "25e74132-39ba-4663-a382-0af2b42715cc",
+            "ioValues": [
+                {
+                    "name": "geometry1",
+                    "ioValue": "8b5e35ab-3a92-44ec-a166-52695bb2cf9e"
+                },
+                {
+                    "name": "geometry2",
+                    "ioValue": "4568bd18-938d-4ad7-86ba-6f5142c04ca7"
+                }
+            ],
+            "description": "The space shared by two shapes."
+        },
+        {
+            "atomType": "Difference",
+            "name": "Difference",
+            "x": 0.6263020833333333,
+            "y": 0.5885714285714286,
+            "uniqueID": "8b5e35ab-3a92-44ec-a166-52695bb2cf9e",
+            "ioValues": [
+                {
+                    "name": "geometry1",
+                    "ioValue": "afa49fd0-7c71-451e-b29b-808338c75c82"
+                },
+                {
+                    "name": "geometry2",
+                    "ioValue": "422fcb42-aa56-4522-bcb1-8913faaf7a34"
+                }
+            ],
+            "description": "Subtracts shape two from shape one."
         }
     ],
     "allConnectors": [
@@ -392,6 +447,20 @@
         },
         {
             "ap1Name": "geometry",
+            "ap2Name": "Shape 2",
+            "ap2Primary": false,
+            "ap1ID": "afa49fd0-7c71-451e-b29b-808338c75c82",
+            "ap2ID": "4568bd18-938d-4ad7-86ba-6f5142c04ca7"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry1",
+            "ap2Primary": false,
+            "ap1ID": "afa49fd0-7c71-451e-b29b-808338c75c82",
+            "ap2ID": "8b5e35ab-3a92-44ec-a166-52695bb2cf9e"
+        },
+        {
+            "ap1Name": "geometry",
             "ap2Name": "Shape 1",
             "ap2Primary": false,
             "ap1ID": "762927d9-b92f-44af-aff2-fe429f07479f",
@@ -415,6 +484,13 @@
             "ap1Name": "geometry",
             "ap2Name": "Shape 1",
             "ap2Primary": false,
+            "ap1ID": "388a5a6d-7a2d-473d-954d-1cba49df0fe2",
+            "ap2ID": "4568bd18-938d-4ad7-86ba-6f5142c04ca7"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Shape 1",
+            "ap2Primary": false,
             "ap1ID": "2bb9d156-76e0-4af7-adda-e4e8151b8309",
             "ap2ID": "a1cab2cd-b19b-45cc-addb-d8d0b878152e"
         },
@@ -424,6 +500,27 @@
             "ap2Primary": true,
             "ap1ID": "a1cab2cd-b19b-45cc-addb-d8d0b878152e",
             "ap2ID": "422fcb42-aa56-4522-bcb1-8913faaf7a34"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry2",
+            "ap2Primary": false,
+            "ap1ID": "422fcb42-aa56-4522-bcb1-8913faaf7a34",
+            "ap2ID": "8b5e35ab-3a92-44ec-a166-52695bb2cf9e"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry2",
+            "ap2Primary": false,
+            "ap1ID": "4568bd18-938d-4ad7-86ba-6f5142c04ca7",
+            "ap2ID": "25e74132-39ba-4663-a382-0af2b42715cc"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry1",
+            "ap2Primary": false,
+            "ap1ID": "8b5e35ab-3a92-44ec-a166-52695bb2cf9e",
+            "ap2ID": "25e74132-39ba-4663-a382-0af2b42715cc"
         }
     ],
     "unitsKey": "MM",
