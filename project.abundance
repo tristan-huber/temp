@@ -40,7 +40,7 @@
                 },
                 {
                     "name": "y length",
-                    "ioValue": 100
+                    "ioValue": 105
                 }
             ],
             "description": "Creates a new rectangle."
@@ -67,7 +67,7 @@
         },
         {
             "atomType": "Equation",
-            "name": "w * r",
+            "name": "w * r + 5",
             "x": 0.09570312500000001,
             "y": 0.48857142857142855,
             "uniqueID": "397fd25b-7236-48cb-8434-29d4330cf57f",
@@ -82,7 +82,7 @@
                 }
             ],
             "description": "Defines a mathematical equation. Edit the output field to add or remove inputs.",
-            "currentEquation": "w * r"
+            "currentEquation": "w * r + 5"
         },
         {
             "atomType": "Code",
