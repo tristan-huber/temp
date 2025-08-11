@@ -1973,6 +1973,20 @@
                 }
             ],
             "description": "Moves a shape laterally in X, Y, Z."
+        },
+        {
+            "atomType": "Import",
+            "name": "Import",
+            "x": 0.13828238719068414,
+            "y": 0.6686746987951807,
+            "uniqueID": "88eb4633-697d-480c-bfb8-d5fda6aca47f",
+            "ioValues": [],
+            "description": "Import Atom, let's you choose a type of file to import and use in your design.",
+            "fileName": "ExportTest(3).svg",
+            "type": "SVG",
+            "SVGwidth": 10,
+            "repoOwner": "tristan-huber",
+            "repoName": "temp"
         }
     ],
     "allConnectors": [
