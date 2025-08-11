@@ -1999,6 +1999,71 @@
             "fileName": null,
             "type": null,
             "SVGwidth": 10
+        },
+        {
+            "atomType": "Export",
+            "name": "Export",
+            "x": 0.7554585152838428,
+            "y": 0.41867469879518077,
+            "uniqueID": "7783b874-efca-49e9-a655-14b89a0a4368",
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "fcd6973c-b95d-4ee0-a107-ddf17bb95804"
+                },
+                {
+                    "name": "Resolution (dpi)",
+                    "ioValue": 96
+                },
+                {
+                    "name": "Part Name",
+                    "ioValue": "temp"
+                },
+                {
+                    "name": "File Type",
+                    "ioValue": "SVG"
+                }
+            ],
+            "description": "Export Atom, let's you choose a type of file to Export.",
+            "type": null,
+            "resolution": 96,
+            "importIndex": 0,
+            "partName": "temp"
+        },
+        {
+            "atomType": "Gcode",
+            "name": "Gcode",
+            "x": 0.9002911208151383,
+            "y": 0.8644578313253012,
+            "uniqueID": "17390a50-231d-4f6d-a26f-2048dceb1a4e",
+            "ioValues": [
+                {
+                    "name": "Geometry",
+                    "ioValue": "79a9bd66-3669-49f0-880e-956511c6db6e"
+                },
+                {
+                    "name": "Tool Size",
+                    "ioValue": 6.35
+                },
+                {
+                    "name": "Passes",
+                    "ioValue": 3
+                },
+                {
+                    "name": "Speed",
+                    "ioValue": 1500
+                },
+                {
+                    "name": "Cut Through",
+                    "ioValue": 1.5
+                },
+                {
+                    "name": "Part Name",
+                    "ioValue": "temp"
+                }
+            ],
+            "description": "Generates Maslow gcode from the input geometry. For single parts, generates one gcode file. For assemblies, extracts individual parts, sorts them left to right based on bounding boxes, generates gcode for each part sequentially, and concatenates the results into one file.",
+            "partName": "temp"
         }
     ],
     "allConnectors": [
@@ -2169,6 +2234,20 @@
             "ap2Primary": true,
             "ap1ID": "fcd6973c-b95d-4ee0-a107-ddf17bb95804",
             "ap2ID": "422fcb42-aa56-4522-bcb1-8913faaf7a34"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": false,
+            "ap1ID": "fcd6973c-b95d-4ee0-a107-ddf17bb95804",
+            "ap2ID": "7783b874-efca-49e9-a655-14b89a0a4368"
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "Geometry",
+            "ap2Primary": false,
+            "ap1ID": "79a9bd66-3669-49f0-880e-956511c6db6e",
+            "ap2ID": "17390a50-231d-4f6d-a26f-2048dceb1a4e"
         },
         {
             "ap1Name": "geometry",
