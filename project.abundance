@@ -698,7 +698,8 @@
                 }
             ],
             "description": "Generates Maslow gcode from the input geometry.",
-            "partName": "temp"
+            "partName": "temp",
+            "sortDirection": "Left"
         },
         {
             "atomType": "GitHubMolecule",
@@ -1980,11 +1981,15 @@
             "x": 0.15138282387190685,
             "y": 0.608433734939759,
             "uniqueID": "88eb4633-697d-480c-bfb8-d5fda6aca47f",
-            "ioValues": [],
+            "ioValues": [
+                {
+                    "name": "SVG Width",
+                    "ioValue": 5
+                }
+            ],
             "description": "Import Atom, let's you choose a type of file to import and use in your design.",
             "fileName": "ExportTest(2).svg",
             "type": "SVG",
-            "SVGwidth": 50,
             "repoOwner": "tristan-huber",
             "repoName": "temp"
         },
@@ -1997,8 +2002,7 @@
             "ioValues": [],
             "description": "Import Atom, let's you choose a type of file to import and use in your design.",
             "fileName": null,
-            "type": null,
-            "SVGwidth": 10
+            "type": null
         },
         {
             "atomType": "Export",
@@ -2063,7 +2067,8 @@
                 }
             ],
             "description": "Generates Maslow gcode from the input geometry. For single parts, generates one gcode file. For assemblies, extracts individual parts, sorts them left to right based on bounding boxes, generates gcode for each part sequentially, and concatenates the results into one file.",
-            "partName": "temp"
+            "partName": "temp",
+            "sortDirection": "Left"
         }
     ],
     "allConnectors": [
